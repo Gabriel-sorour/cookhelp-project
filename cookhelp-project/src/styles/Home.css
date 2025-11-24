@@ -1,0 +1,53 @@
+main {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-container {
+  position: relative;
+}
+
+img {
+  width: 900px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.205);
+}
+
+button {
+  position: absolute;
+  bottom: 40px;
+  right: 70px;
+  font-size: 18px;
+  background-color: white;
+  padding: 5px 15px;
+  border: 2px solid var(--main-color);
+  font-weight: bold;
+  transition: all .3s ease;
+
+  &:hover {
+    background-color: var(--main-color);
+    color: white;
+  }
+}
+
+@media (max-width:1000px) {
+
+  main {
+    height: 50vh;
+  }
+
+  img {
+    width: 700px;
+    height: 300px;
+  }
+
+  button {
+    bottom: 15px;
+    font-size: 16px;
+  }
+
+}

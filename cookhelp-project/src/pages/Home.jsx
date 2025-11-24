@@ -1,7 +1,17 @@
+import HomeBanner from '../assets/home-banner.png'
+import '../styles/Home.css'
+
 function Home() {
-  
-  return(
-    <p>Home page</p>
+
+  return (
+    <main>
+      <section className='banner-container'>
+        <img src={HomeBanner} alt="home-banner" />
+        <button>
+          Start now !
+        </button>
+      </section>
+    </main>
   )
 }
 
