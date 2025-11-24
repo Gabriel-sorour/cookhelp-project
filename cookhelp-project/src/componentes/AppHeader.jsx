@@ -6,9 +6,9 @@ import '../styles/AppHeader.css'
     return (
       <nav className="app-header">
         <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/chatbot'>Chatbot</Link></li>
-          <li><Link to='/about'>About</Link></li>
+          <Link to='/'><li>Home</li></Link>
+         <Link to='/chatbot'> <li>Chatbot</li></Link>
+          <Link to='/about'><li>About</li></Link>
         </ul>
       </nav>
     )
