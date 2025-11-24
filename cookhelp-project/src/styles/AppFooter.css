@@ -1,0 +1,14 @@
+.app-footer{
+  background-color: rgba(71, 57, 85, 0.623);
+  color: black;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
