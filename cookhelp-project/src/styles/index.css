@@ -1,0 +1,24 @@
+:root {
+  --main-bg: rgb(250, 226, 239);
+  --main-color: rgb(100, 0, 146);
+}
+
+body {
+  margin: 0;
+  background-color: var(--main-bg);
+  font-family: Arial;
+  color: var(--main-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
