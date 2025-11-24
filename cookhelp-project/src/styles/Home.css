@@ -54,7 +54,8 @@ button {
 
 @media (max-width:600px) {
   img {
-    width: 400px;
+    width: 100vw;
     height: 300px;
+    border-radius: 0;
   }
 }

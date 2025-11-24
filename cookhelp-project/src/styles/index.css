@@ -22,3 +22,13 @@ p {
 button {
   cursor: pointer;
 }
+
+/* remove the blue tap highlight on mobile phones */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  outline: none;
+}
