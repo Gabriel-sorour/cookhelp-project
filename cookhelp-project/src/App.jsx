@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Chatbot from './pages/Chatbot'
 import About from './pages/About'
 import AppHeader from './componentes/AppHeader'
+import AppFooter from './componentes/AppFooter'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <AppFooter />
     </Router>
   )
 }
