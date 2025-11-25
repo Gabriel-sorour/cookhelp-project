@@ -8,7 +8,7 @@ import AppFooter from './componentes/AppFooter'
 function App() {
 
   return (
-    <HashRouter>
+    <Router>
       <AppHeader />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -16,7 +16,7 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
       <AppFooter />
-    </HashRouter>
+    </Router>
   )
 }
 
