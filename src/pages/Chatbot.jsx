@@ -56,7 +56,9 @@ function ChatbotInput({ setMessages }) {
 
 function Message({ message }) {
   return (
-    <div className="message-prime">
+    <div
+      className={message.sender === 'user' ? "message-prime user-message" : "message-prime"}
+    >
       {message.sender === 'robot' && <img src={RobotImage} />}
       <p>{message.text}</p>
       {message.sender === 'user' && <img src={UserImage} />}

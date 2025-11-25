@@ -9,13 +9,15 @@ function App() {
 
   return (
     <Router>
-      <AppHeader />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/chatbot" element={<Chatbot />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <AppFooter />
+      <div className="app-layout">
+        <AppHeader />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/chatbot" element={<Chatbot />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        <AppFooter />
+      </div>
     </Router>
   )
 }
