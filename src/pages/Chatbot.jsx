@@ -13,21 +13,27 @@ function ChatbotInput() {
   )
 }
 
-function Message() {
+function Message({ message }) {
   return (
     <div className="message-prime">
+      {message.sender === 'robot' && <img src="/" />}
       <p>Hello Chatbot!</p>
-      <img src="/" alt="user" width={40} />
+      {message.sender === 'user' && <img src="/"/>}
     </div>
   )
 }
 
-function Messages() {
+function Messages({ messages, setMessages }) {
 
   return (
     <div className="messages">
-      <Message />
-      <Message />
+      {
+        messages.map(message =>
+          <Message
+            message={message}
+          />
+        )
+      }
     </div>
   )
 }
@@ -50,7 +56,10 @@ function Chatbot() {
     <main className="chatbot-main">
       <section className='chatbot-container'>
         <ChatbotInput />
-        <Messages />
+        <Messages
+          messages={messages}
+          setMessages={setMessages}
+        />
       </section>
     </main>
   )
