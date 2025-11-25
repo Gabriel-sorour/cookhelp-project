@@ -5,7 +5,8 @@ import UserImage from '../assets/user.png'
 import loadingGif from '../assets/loading-spinner.gif'
 
 function ChatbotInput({ setMessages }) {
-  const [inputText, setInputText] = useState('')
+  const [inputText, setInputText] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   function saveInputValue(event) {
     setInputText(event.target.value);
@@ -24,40 +25,43 @@ function ChatbotInput({ setMessages }) {
   }
 
   function sendMessage() {
-    setMessages(prev => [
-      ...prev,
-      {
-        sender: 'user',
-        text: inputText,
-        id: crypto.randomUUID()
-      }
-    ]);
+    if (!isLoading) {
+      setMessages(prev => [
+        ...prev,
+        {
+          sender: 'user',
+          text: inputText,
+          id: crypto.randomUUID()
+        }
+      ]);
 
-    setInputText('');
+      setIsLoading(true);
 
-    // simulate backend response delay
+      setInputText('');
 
-    const loadingId = crypto.randomUUID();
+      // simulate backend response delay
 
-    setMessages(prev => [
-      ...prev,
-      {
-        sender: 'robot',
-        text: <img className='loading-gif' src={loadingGif} alt="loading..." />,
-        id: loadingId
-      }
-    ]);
+      const loadingId = crypto.randomUUID();
 
+      setMessages(prev => [
+        ...prev,
+        {
+          sender: 'robot',
+          text: <img className='loading-gif' src={loadingGif} alt="loading..." />,
+          id: loadingId
+        }
+      ]);
 
-    setTimeout(() => {
-      setMessages(prev => prev.map(message =>
-        message.id === loadingId ?
-          { ...message, text: robotResponse() }
-          : message
-      ));
-    }, 500);
+      setTimeout(() => {
+        setMessages(prev => prev.map(message =>
+          message.id === loadingId ?
+            { ...message, text: robotResponse() }
+            : message
+        ));
+        setIsLoading(false);
+      }, 500);
 
-
+    }
   }
 
 
