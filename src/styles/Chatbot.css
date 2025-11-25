@@ -6,7 +6,7 @@
 .chatbot-container{
   height: 80vh;
   flex-grow: 1;
-  background-color: rgba(0, 128, 0, 0.356);
+  background-color: rgb(138, 183, 224);
 }
 
 .chatbot-container img{
