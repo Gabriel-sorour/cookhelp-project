@@ -35,16 +35,28 @@ function ChatbotInput({ setMessages }) {
     setInputText('');
 
     // simulate backend response delay
+
+    const loadingId = crypto.randomUUID();
+
+    setMessages(prev => [
+      ...prev,
+      {
+        sender: 'robot',
+        text: 'loading...',
+        id: loadingId
+      }
+    ]);
+
+
     setTimeout(() => {
-      setMessages(prev => [
-        ...prev,
-        {
-          sender: 'robot',
-          text: robotResponse(),
-          id: crypto.randomUUID()
-        }
-      ]);
-    }, 500)
+      setMessages(prev => prev.map(message =>
+        message.id === loadingId ?
+          { ...message, text: robotResponse() }
+          : message
+      ));
+    }, 400);
+
+
   }
 
 
