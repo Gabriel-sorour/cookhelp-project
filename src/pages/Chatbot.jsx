@@ -18,7 +18,7 @@ function Message({ message }) {
     <div className="message-prime">
       {message.sender === 'robot' && <img src="/" />}
       <p>Hello Chatbot!</p>
-      {message.sender === 'user' && <img src="/"/>}
+      {message.sender === 'user' && <img src="/" />}
     </div>
   )
 }
@@ -30,6 +30,7 @@ function Messages({ messages, setMessages }) {
       {
         messages.map(message =>
           <Message
+            key={message.id}
             message={message}
           />
         )
