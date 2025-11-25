@@ -1,5 +1,5 @@
 main {
-  height:600px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@ img {
   box-shadow: 5px 0 10px rgba(0, 0, 0, 0.205);
 }
 
-button {
+.banner-container button {
   position: absolute;
   bottom: 40px;
   right: 70px;
@@ -37,7 +37,7 @@ button {
 @media (max-width:1000px) {
 
   main {
-      height:400px;
+    height: 400px;
   }
 
   img {
@@ -45,7 +45,7 @@ button {
     height: 300px;
   }
 
-  button {
+  .banner-container button {
     bottom: 15px;
     font-size: 16px;
   }
