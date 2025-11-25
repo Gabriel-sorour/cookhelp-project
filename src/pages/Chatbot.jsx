@@ -25,7 +25,8 @@ function ChatbotInput({ setMessages }) {
   }
 
   function sendMessage() {
-    if (!isLoading) {
+
+    if (!isLoading && inputText !== '') {
       setMessages(prev => [
         ...prev,
         {
