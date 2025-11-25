@@ -3,12 +3,40 @@ import '../styles/Chatbot.css'
 import RobotImage from '../assets/robot.png'
 import UserImage from '../assets/user.png'
 
-function ChatbotInput() {
+function ChatbotInput({ messages, setMessages }) {
+  const [inputText, setInputText] = useState('')
+
+  function saveInputValue(event) {
+    setInputText(event.target.value);
+    console.log(inputText);
+  }
+  
+  function addMessage() {
+    setMessages(prev => [
+      ...prev,
+      {
+        sender: 'user',
+        text: inputText,
+        id: crypto.randomUUID()
+      },
+      {
+        sender: 'robot',
+        text: 'okay',
+        id: crypto.randomUUID()
+      },
+    ])
+  }
+
 
   return (
     <div className='chatbot-input'>
-      <input placeholder='Send message to Chatbot' />
-      <button>
+      <input
+        onChange={saveInputValue}
+        placeholder='Send message to Chatbot'
+      />
+      <button
+        onClick={addMessage}
+      >
         Send
       </button>
     </div>
@@ -19,7 +47,7 @@ function Message({ message }) {
   return (
     <div className="message-prime">
       {message.sender === 'robot' && <img src={RobotImage} />}
-      <p>Hello Chatbot!</p>
+      <p>{message.text}</p>
       {message.sender === 'user' && <img src={UserImage} />}
     </div>
   )
@@ -58,7 +86,10 @@ function Chatbot() {
   return (
     <main className="chatbot-main">
       <section className='chatbot-container'>
-        <ChatbotInput />
+        <ChatbotInput
+          messages={messages}
+          setMessages={setMessages}
+        />
         <Messages
           messages={messages}
           setMessages={setMessages}
