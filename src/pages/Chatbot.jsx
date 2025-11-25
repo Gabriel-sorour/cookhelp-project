@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import '../styles/Chatbot.css'
+import RobotImage from '../assets/robot.png'
+import UserImage from '../assets/user.png'
 
 function ChatbotInput() {
 
@@ -16,9 +18,9 @@ function ChatbotInput() {
 function Message({ message }) {
   return (
     <div className="message-prime">
-      {message.sender === 'robot' && <img src="/" />}
+      {message.sender === 'robot' && <img src={RobotImage} />}
       <p>Hello Chatbot!</p>
-      {message.sender === 'user' && <img src="/" />}
+      {message.sender === 'user' && <img src={UserImage} />}
     </div>
   )
 }
