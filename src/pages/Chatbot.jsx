@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import '../styles/Chatbot.css'
 import RobotImage from '../assets/robot.png'
 import UserImage from '../assets/user.png'
+import loadingGif from '../assets/loading-spinner.gif'
 
 function ChatbotInput({ setMessages }) {
   const [inputText, setInputText] = useState('')
@@ -42,7 +43,7 @@ function ChatbotInput({ setMessages }) {
       ...prev,
       {
         sender: 'robot',
-        text: 'loading...',
+        text: <img className='loading-gif' src={loadingGif} alt="loading..." />,
         id: loadingId
       }
     ]);
@@ -54,7 +55,7 @@ function ChatbotInput({ setMessages }) {
           { ...message, text: robotResponse() }
           : message
       ));
-    }, 400);
+    }, 500);
 
 
   }
