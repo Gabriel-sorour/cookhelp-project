@@ -13,7 +13,24 @@ function ChatbotInput() {
   )
 }
 
+function Message() {
+  return (
+    <div className="message-prime">
+      <p>Hello Chatbot!</p>
+      <img src="/" alt="user" width={40} />
+    </div>
+  )
+}
 
+function Messages() {
+
+  return (
+    <div className="messages">
+      <Message />
+      <Message />
+    </div>
+  )
+}
 
 
 function Chatbot() {
@@ -33,6 +50,7 @@ function Chatbot() {
     <main className="chatbot-main">
       <section className='chatbot-container'>
         <ChatbotInput />
+        <Messages />
       </section>
     </main>
   )
