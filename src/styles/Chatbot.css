@@ -93,3 +93,10 @@
   gap: 20px;
   padding-inline: 10px;
 }
+
+.welcome-message{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  opacity: .5;
+}
