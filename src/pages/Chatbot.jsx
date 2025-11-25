@@ -3,7 +3,7 @@ import '../styles/Chatbot.css'
 import RobotImage from '../assets/robot.png'
 import UserImage from '../assets/user.png'
 
-function ChatbotInput({ messages, setMessages }) {
+function ChatbotInput({ setMessages }) {
   const [inputText, setInputText] = useState('')
 
   function saveInputValue(event) {
@@ -22,7 +22,7 @@ function ChatbotInput({ messages, setMessages }) {
     }
   }
 
-  function addMessage() {
+  function sendMessage() {
     setMessages(prev => [
       ...prev,
       {
@@ -46,7 +46,7 @@ function ChatbotInput({ messages, setMessages }) {
         placeholder='Send message to Chatbot'
       />
       <button
-        onClick={addMessage}
+        onClick={sendMessage}
       >
         Send
       </button>
@@ -64,8 +64,7 @@ function Message({ message }) {
   )
 }
 
-function Messages({ messages, setMessages }) {
-
+function Messages({ messages }) {
   return (
     <div className="messages">
       {
@@ -95,7 +94,7 @@ function Chatbot() {
   ]);
 
   return (
-    <main className="chatbot-main">
+    <div className="chatbot-main">
       <section className='chatbot-container'>
         <ChatbotInput
           messages={messages}
@@ -106,7 +105,7 @@ function Chatbot() {
           setMessages={setMessages}
         />
       </section>
-    </main>
+    </div>
   )
 }
 
