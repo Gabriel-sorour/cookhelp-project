@@ -29,15 +29,22 @@ function ChatbotInput({ setMessages }) {
         sender: 'user',
         text: inputText,
         id: crypto.randomUUID()
-      },
-      {
-        sender: 'robot',
-        text: robotResponse(),
-        id: crypto.randomUUID()
-      },
+      }
     ]);
 
     setInputText('');
+
+    // simulate backend response delay
+    setTimeout(() => {
+      setMessages(prev => [
+        ...prev,
+        {
+          sender: 'robot',
+          text: robotResponse(),
+          id: crypto.randomUUID()
+        }
+      ]);
+    }, 500)
   }
 
 
