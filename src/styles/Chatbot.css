@@ -1,0 +1,10 @@
+.chatbot-main{
+  height: 84vh;
+  align-items: center;
+}
+
+.chatbot-container{
+  height: 80vh;
+  flex-grow: 1;
+  background-color: rgba(0, 128, 0, 0.356);
+}

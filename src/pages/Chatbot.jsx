@@ -1,7 +1,13 @@
+import '../styles/Chatbot.css'
+
 function Chatbot() {
   
   return(
-    <p>Chatbot page</p>
+    <main className="chatbot-main">
+      <section className='chatbot-container'>
+      
+      </section>
+    </main>
   )
 }
 
