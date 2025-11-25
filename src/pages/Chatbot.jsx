@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../styles/Chatbot.css'
 import RobotImage from '../assets/robot.png'
 import UserImage from '../assets/user.png'
@@ -67,8 +67,16 @@ function Message({ message }) {
 }
 
 function Messages({ messages }) {
+  const messagesRef = useRef(null);
+  useEffect(() => {
+    const messagesElem = messagesRef.current;
+    messagesElem.scrollTop = messagesRef.current.scrollHeight;
+  }, [messages])
+
   return (
-    <div className="messages">
+    <div
+      ref={messagesRef}
+      className="messages">
       {
         messages.map(message =>
           <Message
