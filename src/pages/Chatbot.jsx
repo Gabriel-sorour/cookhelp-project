@@ -85,12 +85,12 @@ function Messages({ messages }) {
       ref={messagesRef}
       className="messages">
       {
-      messages[0] === undefined &&
-      <div className='welcome-message'>
-        <p>
-          Welcome to Cook Smarter Chatbot! Start chatting now!
-        </p>
-      </div>
+        messages[0] === undefined &&
+        <div className='welcome-message'>
+          <p>
+            Welcome to Cook Smarter Chatbot! Start chatting now!
+          </p>
+        </div>
       }
 
       {
