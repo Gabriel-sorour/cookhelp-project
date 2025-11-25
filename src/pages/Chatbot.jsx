@@ -10,7 +10,18 @@ function ChatbotInput({ messages, setMessages }) {
     setInputText(event.target.value);
     console.log(inputText);
   }
-  
+
+  function robotResponse() {
+    switch (inputText) {
+      case 'hello':
+        return 'hello';
+      case 'hi':
+        return 'hi'
+      default:
+        return 'okay'
+    }
+  }
+
   function addMessage() {
     setMessages(prev => [
       ...prev,
@@ -21,7 +32,7 @@ function ChatbotInput({ messages, setMessages }) {
       },
       {
         sender: 'robot',
-        text: 'okay',
+        text: robotResponse(),
         id: crypto.randomUUID()
       },
     ])
