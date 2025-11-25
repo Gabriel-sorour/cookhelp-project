@@ -8,7 +8,7 @@ function ChatbotInput({ setMessages }) {
 
   function saveInputValue(event) {
     setInputText(event.target.value);
-    console.log(inputText);
+    // console.log(inputText);
   }
 
   function robotResponse() {
@@ -35,7 +35,9 @@ function ChatbotInput({ setMessages }) {
         text: robotResponse(),
         id: crypto.randomUUID()
       },
-    ])
+    ]);
+
+    setInputText('');
   }
 
 
@@ -43,7 +45,12 @@ function ChatbotInput({ setMessages }) {
     <div className='chatbot-input'>
       <input
         onChange={saveInputValue}
+        onKeyDown={(evnet) => {
+          evnet.key === 'Enter' && sendMessage();
+          evnet.key === 'Escape' && setInputText('');
+        }}
         placeholder='Send message to Chatbot'
+        value={inputText}
       />
       <button
         onClick={sendMessage}
