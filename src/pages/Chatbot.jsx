@@ -85,6 +85,15 @@ function Messages({ messages }) {
       ref={messagesRef}
       className="messages">
       {
+      messages[0] === undefined &&
+      <div className='welcome-message'>
+        <p>
+          Welcome to Cook Smarter Chatbot! Start chatting now!
+        </p>
+      </div>
+      }
+
+      {
         messages.map(message =>
           <Message
             key={message.id}
@@ -98,17 +107,7 @@ function Messages({ messages }) {
 
 
 function Chatbot() {
-  const [messages, setMessages] = useState([{
-    sender: 'user',
-    text: 'Hello Chatbot!',
-    id: crypto.randomUUID()
-  },
-  {
-    sender: 'robot',
-    text: 'Hello User!',
-    id: crypto.randomUUID()
-  }
-  ]);
+  const [messages, setMessages] = useState([]);
 
   return (
     <div className="chatbot-main">
