@@ -34,7 +34,7 @@ main {
   }
 }
 
-@media (max-width:1400px) {
+@media (max-width:2000px) {
 
   main {
     height: 400px;
