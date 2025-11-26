@@ -1,4 +1,5 @@
-.app-footer {
+.app-footer,
+.app-footer-for-input {
   background-color: rgba(71, 57, 85, 0.623);
   color: black;
   font-size: 14px;
@@ -11,4 +12,10 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+@media (max-width:600px) {
+  .app-footer-for-input {
+    display: none;
+  }
 }

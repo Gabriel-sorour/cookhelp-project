@@ -1,9 +1,9 @@
 import '../styles/AppFooter.css'
 
-function AppFooter() {
+function AppFooter({ isFocused, isOnBottom }) {
 
   return (
-    <div className="app-footer">
+    <div className={isFocused && isOnBottom ? "app-footer-for-input" : "app-footer"}>
       <p>© 2025 cookhelp</p>
       <p>All rights reserved</p>
     </div>

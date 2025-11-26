@@ -165,4 +165,9 @@
     bottom: 0;
     z-index: 10;
   }
+
+  .chatbot-main-for-input {
+    margin-bottom: 0px;
+  }
+
 }

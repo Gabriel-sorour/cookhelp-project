@@ -4,7 +4,7 @@ import RobotImage from '../assets/robot.png'
 import UserImage from '../assets/user.png'
 import loadingGif from '../assets/loading-spinner.gif'
 
-function ChatbotInput({ setMessages }) {
+function ChatbotInput({ setMessages, setIsFocused }) {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -82,6 +82,8 @@ function ChatbotInput({ setMessages }) {
         }}
         placeholder='Send message to Chatbot'
         value={inputText}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
       />
       <button
         onClick={sendMessage}
@@ -153,9 +155,8 @@ function ChangeTextBoxPosition({ seIsOnBottom, isOnBottom }) {
   )
 }
 
-function Chatbot() {
+function Chatbot({ isFocused, setIsFocused, isOnBottom, seIsOnBottom }) {
   const [messages, setMessages] = useState([]);
-  const [isOnBottom, seIsOnBottom] = useState(false);
 
   if (!isOnBottom) {
     return (
@@ -163,6 +164,7 @@ function Chatbot() {
         <ChatbotInput
           messages={messages}
           setMessages={setMessages}
+          setIsFocused={setIsFocused}
         />
         <section className='chatbot-container'>
           <Messages
@@ -179,7 +181,11 @@ function Chatbot() {
   }
   else {
     return (
-      <div className="chatbot-main">
+      <div className={
+        isFocused ?
+          "chatbot-main chatbot-main-for-input"
+          : "chatbot-main"}
+      >
         <ChangeTextBoxPosition
           isOnBottom={isOnBottom}
           seIsOnBottom={seIsOnBottom}
@@ -194,6 +200,7 @@ function Chatbot() {
         <ChatbotInput
           messages={messages}
           setMessages={setMessages}
+          setIsFocused={setIsFocused}
         />
       </div>
     )
