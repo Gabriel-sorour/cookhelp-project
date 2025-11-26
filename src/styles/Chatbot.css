@@ -22,6 +22,10 @@
   overflow: hidden;
 }
 
+.chatbot-container-bottom {
+  justify-content: end;
+}
+
 .chatbot-input {
   /* background-color: green; */
   display: flex;

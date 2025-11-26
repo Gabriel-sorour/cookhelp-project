@@ -173,7 +173,7 @@ function Chatbot() {
           isOnBottom={isOnBottom}
           seIsOnBottom={seIsOnBottom}
         />
-        <section className='chatbot-container'>
+        <section className='chatbot-container chatbot-container-bottom'>
           <Messages
             messages={messages}
             setMessages={setMessages}
