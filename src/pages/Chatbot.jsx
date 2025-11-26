@@ -3,6 +3,7 @@ import '../styles/Chatbot.css'
 import RobotImage from '../assets/robot.png'
 import UserImage from '../assets/user.png'
 import loadingGif from '../assets/loading-spinner.gif'
+import SettingSymbol from '../assets/setting.svg'
 
 function ChatbotInput({ setMessages, setIsFocused }) {
   const [inputText, setInputText] = useState('');
@@ -150,6 +151,7 @@ function ChangeTextBoxPosition({ seIsOnBottom, isOnBottom }) {
     <div className='move-textbox-div'>
       <p onClick={() => seIsOnBottom(prev => !prev)}>
         {isOnBottom ? 'Move textbox to Top' : 'Move textbox to bottom'}
+        <img src={SettingSymbol} />
       </p>
     </div>
   )

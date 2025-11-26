@@ -111,11 +111,11 @@
 /* .messages-bottom {
    justify-content: end;
 } */
- /* spacer sitll option !! */
- /* .spacer{
+/* spacer sitll option !! */
+/* .spacer{
   flex-grow: 1;
 } */
- 
+
 .messages-bottom> :first-child {
   margin-top: auto;
 }
@@ -140,8 +140,19 @@
 }
 
 .move-textbox-div p {
-  text-decoration: underline;
+  color: black;
   cursor: pointer;
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.move-textbox-div img{
+  width: 20px;
 }
 
 
