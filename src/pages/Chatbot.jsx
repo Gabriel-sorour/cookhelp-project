@@ -69,9 +69,15 @@ function ChatbotInput({ setMessages }) {
   return (
     <div className='chatbot-input'>
       <input
+        type='search' //hide the password par at the top of phones keyboard
+        autoComplete='nope'
         onChange={saveInputValue}
         onKeyDown={(evnet) => {
-          evnet.key === 'Enter' && sendMessage();
+
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            sendMessage();
+          }
           evnet.key === 'Escape' && setInputText('');
         }}
         placeholder='Send message to Chatbot'
@@ -79,6 +85,7 @@ function ChatbotInput({ setMessages }) {
       />
       <button
         onClick={sendMessage}
+        type="button" // to avoid borwser deal with it as a summit button
       >
         Send
       </button>

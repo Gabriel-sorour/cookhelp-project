@@ -107,8 +107,17 @@
   height: 100%;
 }
 
-.messages-bottom {
-  justify-content: end;
+/* Clipped !! */
+/* .messages-bottom {
+   justify-content: end;
+} */
+ /* spacer sitll option !! */
+ /* .spacer{
+  flex-grow: 1;
+} */
+ 
+.messages-bottom> :first-child {
+  margin-top: auto;
 }
 
 .welcome-message {
