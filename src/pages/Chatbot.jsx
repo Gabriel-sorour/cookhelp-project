@@ -109,8 +109,10 @@ function Messages({ messages, isOnBottom }) {
   const messagesRef = useRef(null);
   useEffect(() => {
     const messagesElem = messagesRef.current;
-    messagesElem.scrollTop = messagesRef.current.scrollHeight;
-  }, [messages])
+    messagesElem.scrollTop = isOnBottom ? messagesRef.current.scrollHeight : null;
+  }, [messages, isOnBottom])
+
+  const messagesArray = isOnBottom ? [...messages] : [...messages].reverse();
 
   return (
     <div
@@ -129,7 +131,7 @@ function Messages({ messages, isOnBottom }) {
       }
 
       {
-        messages.map(message =>
+        messagesArray.map(message =>
           <Message
             key={message.id}
             message={message}
