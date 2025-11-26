@@ -33,9 +33,6 @@
   margin-bottom: 10px;
 }
 
-.chatbot-input-bottom{
-
-}
 
 .chatbot-input input {
   font-size: 16px;
@@ -143,7 +140,7 @@
     margin-bottom: 10px;
   }
 
-  .messages{
-     margin-top: 0px;
+  .messages {
+    margin-top: 0px;
   }
 }
