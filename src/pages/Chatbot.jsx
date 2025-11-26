@@ -98,7 +98,7 @@ function Message({ message }) {
   )
 }
 
-function Messages({ messages }) {
+function Messages({ messages, isOnBottom }) {
   const messagesRef = useRef(null);
   useEffect(() => {
     const messagesElem = messagesRef.current;
@@ -108,7 +108,10 @@ function Messages({ messages }) {
   return (
     <div
       ref={messagesRef}
-      className="messages">
+      className={
+        isOnBottom ? "messages messages-bottom" : "messages"
+      }
+    >
       {
         messages[0] === undefined &&
         <div className='welcome-message'>
@@ -173,10 +176,11 @@ function Chatbot() {
           isOnBottom={isOnBottom}
           seIsOnBottom={seIsOnBottom}
         />
-        <section className='chatbot-container chatbot-container-bottom'>
+        <section className='chatbot-container'>
           <Messages
             messages={messages}
             setMessages={setMessages}
+            isOnBottom={isOnBottom}
           />
         </section>
         <ChatbotInput

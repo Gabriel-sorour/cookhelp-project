@@ -22,9 +22,6 @@
   overflow: hidden;
 }
 
-.chatbot-container-bottom {
-  justify-content: end;
-}
 
 .chatbot-input {
   /* background-color: green; */
@@ -72,6 +69,7 @@
 }
 
 .message-prime {
+  /* background-color: aqua; */
   width: 100%;
   max-width: 700px;
   display: flex;
@@ -106,6 +104,11 @@
   flex-direction: column;
   gap: 20px;
   /* padding-inline: 10px; */
+  height: 100%;
+}
+
+.messages-bottom {
+  justify-content: end;
 }
 
 .welcome-message {
