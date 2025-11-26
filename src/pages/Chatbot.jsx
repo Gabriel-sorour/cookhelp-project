@@ -142,13 +142,12 @@ function Messages({ messages, isOnBottom }) {
   )
 }
 
-function ChangeTextBoxPosition({ seIsOnBottom }) {
-
+function ChangeTextBoxPosition({ seIsOnBottom, isOnBottom }) {
 
   return (
     <div className='move-textbox-div'>
       <p onClick={() => seIsOnBottom(prev => !prev)}>
-        Move textbox to bottom
+        {isOnBottom ? 'Move textbox to Top' : 'Move textbox to bottom'}
       </p>
     </div>
   )
