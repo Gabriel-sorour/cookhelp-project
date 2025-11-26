@@ -150,4 +150,10 @@
   .messages {
     margin-top: 0px;
   }
+
+  .chatbot-input {
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+  }
 }
