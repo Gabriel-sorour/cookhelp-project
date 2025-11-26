@@ -130,24 +130,63 @@ function Messages({ messages }) {
   )
 }
 
+function ChangeTextBoxPosition({ seIsOnBottom }) {
+
+
+  return (
+    <div className='move-textbox-div'>
+      <p onClick={() => seIsOnBottom(prev => !prev)}>
+        Move textbox to bottom
+      </p>
+    </div>
+  )
+}
 
 function Chatbot() {
   const [messages, setMessages] = useState([]);
+  const [isOnBottom, seIsOnBottom] = useState(false);
 
-  return (
-    <div className="chatbot-main">
-      <section className='chatbot-container'>
+  if (!isOnBottom) {
+    return (
+      <div className="chatbot-main">
         <ChatbotInput
           messages={messages}
           setMessages={setMessages}
         />
-        <Messages
+        <section className='chatbot-container'>
+          <Messages
+            messages={messages}
+            setMessages={setMessages}
+          />
+        </section>
+        <ChangeTextBoxPosition
+          isOnBottom={isOnBottom}
+          seIsOnBottom={seIsOnBottom}
+        />
+      </div>
+    );
+  }
+  else {
+    return (
+      <div className="chatbot-main">
+        <ChangeTextBoxPosition
+          isOnBottom={isOnBottom}
+          seIsOnBottom={seIsOnBottom}
+        />
+        <section className='chatbot-container'>
+          <Messages
+            messages={messages}
+            setMessages={setMessages}
+          />
+        </section>
+        <ChatbotInput
           messages={messages}
           setMessages={setMessages}
         />
-      </section>
-    </div>
-  )
+      </div>
+    )
+  }
+
 }
 
 export default Chatbot;
