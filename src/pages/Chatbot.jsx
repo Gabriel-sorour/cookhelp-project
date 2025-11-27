@@ -88,7 +88,8 @@ function ChatbotInput({ setMessages, setIsFocused }) {
       />
       <button
         onClick={sendMessage}
-        type="button" // to avoid borwser deal with it as a summit button
+        onMouseDown={(e) => e.preventDefault()}
+        type="button"
       >
         Send
       </button>
