@@ -4,6 +4,7 @@ import RobotImage from '../assets/robot.png'
 import UserImage from '../assets/user.png'
 import loadingGif from '../assets/loading-spinner.gif'
 import SettingSymbol from '../assets/setting.svg'
+import { getRobotResponse } from '../utils/chatbotLogic';
 
 function ChatbotInput({ setMessages, setIsFocused }) {
   const [inputText, setInputText] = useState('');
@@ -14,16 +15,16 @@ function ChatbotInput({ setMessages, setIsFocused }) {
     // console.log(inputText);
   }
 
-  function robotResponse() {
-    switch (inputText) {
-      case 'hello':
-        return 'hello';
-      case 'hi':
-        return 'hi'
-      default:
-        return 'okay'
-    }
-  }
+  // function robotResponse() {
+  //   switch (inputText) {
+  //     case 'hello':
+  //       return 'hello';
+  //     case 'hi':
+  //       return 'hi'
+  //     default:
+  //       return 'okay'
+  //   }
+  // }
 
   function sendMessage() {
 
@@ -57,7 +58,7 @@ function ChatbotInput({ setMessages, setIsFocused }) {
       setTimeout(() => {
         setMessages(prev => prev.map(message =>
           message.id === loadingId ?
-            { ...message, text: robotResponse() }
+            { ...message, text: getRobotResponse(inputText) }
             : message
         ));
         setIsLoading(false);
